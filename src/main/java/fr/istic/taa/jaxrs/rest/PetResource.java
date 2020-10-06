@@ -9,9 +9,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 
-import fr.istic.taa.jaxrs.domain.Pet;
+import fr.istic.taa.jaxrs.dto.PetDto;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.models.tags.Tag;
 
@@ -21,9 +20,9 @@ public class PetResource {
 
   @GET
   @Path("/{petId}")
-  public Pet getPetById(@PathParam("petId") Long petId)  {
+  public PetDto getPetById(@PathParam("petId") Long petId)  {
       // return pet
-	  Pet pet = new Pet();
+	  PetDto pet = new PetDto();
 	  pet.setId(petId);
 	  pet.setName("dog");
 	  Tag tag = new Tag();
@@ -37,7 +36,7 @@ public class PetResource {
 
   @POST
   @Consumes("application/json")
-  public Pet addPet(@Parameter(description = "Pet object that needs to be added to the store", required = true) Pet pet) {
+  public PetDto addPet(@Parameter(description = "Pet object that needs to be added to the store", required = true) PetDto pet) {
 	  
 	  pet.setName("cat");
 	  pet.setId(1111l);

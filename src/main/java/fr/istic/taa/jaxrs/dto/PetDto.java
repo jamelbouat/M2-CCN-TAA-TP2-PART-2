@@ -1,4 +1,4 @@
-package fr.istic.taa.jaxrs.domain;
+package fr.istic.taa.jaxrs.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import io.swagger.v3.oas.models.tags.Tag;
 
 @XmlRootElement(name = "Pet")
-public class Pet {
+public class PetDto {
   private long id;
   private String name;
   private List<Tag> tags = new ArrayList<Tag>();
